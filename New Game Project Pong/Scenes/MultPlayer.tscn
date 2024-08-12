@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd8obspjfimp4"]
+
+[ext_resource type="Script" path="res://Scripits/Player 1.gd" id="1_0n24r"]
+[ext_resource type="Script" path="res://Scripits/Player 2.gd" id="2_ckjcu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dy2jv"]
+radius = 5.0
+height = 104.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa5w5"]
+radius = 8.0
+height = 112.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player 1" type="StaticBody2D" parent="."]
+position = Vector2(69, 254)
+script = ExtResource("1_0n24r")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1"]
+position = Vector2(3, -7)
+shape = SubResource("CapsuleShape2D_dy2jv")
+
+[node name="Player 2" type="StaticBody2D" parent="."]
+position = Vector2(896, 256)
+script = ExtResource("2_ckjcu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_aa5w5")
